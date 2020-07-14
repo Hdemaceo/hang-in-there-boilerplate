@@ -4,22 +4,19 @@ var image = document.querySelector(".poster-img");
 var title = document.querySelector(".poster-title");
 var quote = document.querySelector(".poster-quote");
 var showFormButton = document.querySelector(".show-form");
-var savePosterButton = document.querySelector(".save-poster"); // should this be .save-poster instead of .show-saved
-var takeMeBackButton = document.querySelector(".show-main");
+var savePosterButton = document.querySelector(".save-poster");
 var backToMainButton = document.querySelector(".back-to-main");
 var urlInput = document.querySelector("#poster-image-url");
 var titleInput = document.querySelector("#poster-title");
 var quoteInput = document.querySelector("#poster-quote");
-
 var showPosterButton = document.querySelector(".make-poster");
-
 var savedPostersPage = document.querySelector(".saved-posters");
 var savedPostersGrid = document.querySelector(".saved-posters-grid");
 var posterFormSection = document.querySelector(".poster-form");
 var mainPosterSection = document.querySelector(".main-poster");
 var showSavedPostersButton = document.querySelector(".show-saved");
+var randomPosterButton = document.querySelector(".show-random");
 
-var randomPosterButton = document.querySelector(".show-random"); //added query selector for rando poster button
 // we've provided you with some data to work with 👇
 
 var images = [
@@ -124,20 +121,15 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
+
 window.addEventListener("load", randomizePoster);
 showPosterButton.addEventListener("click", handleShowPosterClick);
 showFormButton.addEventListener("click", handleShowFormClick);
-//savePosterButton.addEventListener("click", handleShowSaveClick);
 takeMeBackButton.addEventListener("click", handleTakeBackClick);
 backToMainButton.addEventListener("click", handleBackToMainClick);
-
 savePosterButton.addEventListener("click", savePoster);
 showSavedPostersButton.addEventListener("click", showSavedPosters);
-
-
-
-
-randomPosterButton.addEventListener("click", randomizePoster); //add event listener for rando poster button, when button clicked, another random poster loaded
+randomPosterButton.addEventListener("click", randomizePoster);
 
 // functions and event handlers go here 👇
 
@@ -214,12 +206,6 @@ function handleShowFormClick(event) {
   hidePosterPage()
   showForm()
 }
-
-// function handleShowSaveClick(event){
-//   event.preventDefault()
-//   hidePosterPage()
-//   showSaved()
-// }
 
 function hidePosterPage() {
   var mainPosterSection = document.querySelector(".main-poster")
